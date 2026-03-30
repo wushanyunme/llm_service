@@ -6,8 +6,10 @@ class MemoryManager:
         self.r = redis.Redis(host="localhost", port=6379, decode_responses= True)
 
     def get(self, session_id):
-        data = self.r.get(session_id)
-        return json.loads(data) if data else None
+        # data = self.r.get(session_id)
+        # return json.loads(data) if data else None
+        return []
 
     def save(self, session_id, messages):
-        self.r.set(session_id, json.dumps(messages[-20:]))
+        # self.r.set(session_id, json.dumps(messages[-20:]))
+        pass
